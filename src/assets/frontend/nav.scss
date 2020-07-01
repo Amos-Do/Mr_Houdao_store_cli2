@@ -1,0 +1,144 @@
+.nav {
+  text-align: center;
+  transition: .5s ease;
+  @include media-breakpoint-down(md) {
+    background-color: white;
+  }
+  .nav-item {
+    transition: .2s ease;
+    &:hover,&.show,& .active{
+      color: $secondary;
+      border-bottom: 3px solid $secondary;
+    }
+  }
+  
+  
+}
+.nav-light {
+  background-color: white;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.233);
+}
+
+.dropdown-toggle{
+  &:after{
+    border:0;
+  }
+}
+
+
+.cart-icon {
+  .badge {
+    position: absolute;
+    top: 5%;
+    right: 26%;
+    
+  }
+  
+  table {
+    button {
+      &:hover,&:active{
+        color: $light !important;
+      }
+      
+    }
+  }
+}
+.pulse-animated {
+  animation: pulse 1s infinite;
+}
+.bounce-animated {
+  animation: bounce 1s;
+}
+
+.btn-light-red {
+  color: $light;
+}
+
+.cart-product {
+  font-weight: 400;
+  white-space: nowrap;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+.carousel-item {
+  background-size: cover;
+  background-position: center;
+  .carousel-content {
+    // max-width: 
+    position: absolute;
+    top: 15%;
+    bottom: 5%;
+    right: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+    }
+    .angle-double-down {
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      right: 50%;
+      font-size: 30px;
+      color: $light;
+      text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.233);
+      animation: fadeInDown 2s infinite;
+    }
+  }
+}
+
+.carousel-item:nth-of-type(1) {
+  background-image: url('./assets/images/banner1.jpg');
+  background-position: top;
+  .carousel-content {
+    text-align: right;
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+    p {
+      display: inline-block;
+      margin-top: 10%;
+      margin-right: 16%;
+      letter-spacing: 0.3rem;
+      background-color: $secondary;
+      @include media-breakpoint-down(sm) {
+        margin-right: 0;
+        margin-top: 50%;
+      }
+    }
+    h2 {
+      font-size: $h1-font-size * 1.3;
+      margin-right: 10%;
+      @include media-breakpoint-down(sm) {
+        font-size: $h1-font-size;
+        padding: 2%;
+        background: rgba(255, 255, 255, 0.849);
+        margin: 0;
+      }
+      @media (min-width: 1200px) {
+        font-size: $h1-font-size * 1.5;
+      }
+      span {
+        font-weight: 700;
+        font-style: italic;
+      }
+    }
+  }
+  
+}
+.carousel-item:nth-of-type(2) {
+  background-image: url('./assets/images/banner2.jpg');
+  
+}
+.carousel-item:nth-of-type(3) {
+  background-image: url('./assets/images/banner3.jpg');
+}
+.carousel-item:nth-of-type(4) {
+  background-image: url('./assets/images/banner4.jpg');
+}
+

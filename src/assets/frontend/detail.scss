@@ -1,0 +1,19 @@
+.detail {
+  letter-spacing: 1px;
+  .detail-img {
+    // background-image:url('./assets/images/product1-1.jpg');
+    background-size: cover;
+    background-position: 50%;
+    height: 100%;
+    @include media-breakpoint-down(sm) {
+      height: 400px;
+    }
+  }
+  .detail-content {
+    font-size: .9rem;
+    color: $gray-600;
+    tr td:nth-of-type(2) {
+      color: $gray-600;
+    }
+  }
+}

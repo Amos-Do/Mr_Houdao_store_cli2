@@ -51,7 +51,6 @@ export default {
       const vm = this;
       this.$store.commit('LOADING', true, { root: true });
       this.$http.get(api).then(response => {
-        console.log(response.data);
         this.$store.commit('LOADING', false, { root: true });
         vm.orders = response.data.orders;
         vm.pagination = response.data.pagination;

@@ -167,7 +167,6 @@ export default {
       } else {
         newQty = qty - 1;
       }
-      console.log(newQty);
       this.$store.dispatch('cartModules/changeQty', {originCartId, originProductId, newQty});
     },
     addCouponCode() {

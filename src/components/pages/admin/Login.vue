@@ -96,7 +96,6 @@ export default {
       this.$http.post(api, vm.user).then(response => {
         if (response.data.success) {
           this.$store.commit('LOADING', false, { root: true });
-          console.log(response.data);
           this.$router.push('/admin/products_list')
         } else {
           this.$store.commit('LOADING', false, { root: true });

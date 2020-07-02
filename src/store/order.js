@@ -15,7 +15,6 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/order`;
       context.commit('LOADING', true, { root: true });
       axios.post(api, { data: order }).then(response => {
-        console.log(response.data);
         if (response.data.success) {
           context.commit('LOADING', false, { root: true });
           // 成功後跳到指定 付款頁面，並帶上 orderId
@@ -31,7 +30,6 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/order/${orderId}`;
       context.commit('LOADING', true, { root: true });
       axios.get(api).then(response => {
-        console.log(response.data);
         context.commit('LOADING', false, { root: true });
         context.commit('GETORDER', response.data.order);
         // vm.order = response.data.order
@@ -42,7 +40,6 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${orderId}`;
       context.commit('LOADING', true, { root: true });
       axios.post(api).then(response => {
-        console.log(response.data);
         if(response.data.success) {
           context.commit('LOADING', false, { root: true });
           router.replace(`/pay_complate/${orderId}`);

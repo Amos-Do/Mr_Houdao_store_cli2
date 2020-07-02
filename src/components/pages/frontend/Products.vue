@@ -115,13 +115,11 @@ export default {
     },
     addtoCart(id, qty = 1) {
       const target = this.cart.carts.filter(item => item.product_id === id);
-      console.log(target);
       if (target.length > 0) {
         const originCartId = target[0].id;
         const originQty = target[0].qty;
         const originProductId = target[0].product_id;
         const newQty = Number(qty) + Number(originQty);
-        console.log("newQty", newQty);
         this.$store.dispatch("cartModules/changeQty", { originCartId, originProductId, newQty });
       } else {
         this.$store.dispatch("cartModules/addtoCart", { id, qty });

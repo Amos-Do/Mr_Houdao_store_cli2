@@ -201,7 +201,6 @@ export default {
       const vm = this;
       this.$store.commit('LOADING', true, { root: true });
       this.$http.get(api).then(response => {
-        console.log(response.data);
         this.$store.commit('LOADING', false, { root: true });
         vm.coupons = response.data.coupons;
         vm.pagination = response.data.pagination;
@@ -230,7 +229,6 @@ export default {
         const dateAndTime = new Date(this.tempCoupon.due_date * 1000)
           .toISOString() // 取得 ISO 格式的日期字串，日期會變成類似這種格式：2011-10-05T14:48:00.000Z
           .split("T"); // 以字母”T”為中心，將這段字串切成兩半，並取得前半段
-        console.log(dateAndTime);
         this.due_date = dateAndTime[0];
       }
       $("#couponModal").modal("show");
@@ -252,7 +250,6 @@ export default {
       }
       this.$store.commit('LOADING', true, { root: true });
       this.$http[httpMethod](api, { data: vm.tempCoupon }).then(response => {
-        console.log(response.data);
         if (response.data.success) {
           this.$store.commit('LOADING', false, { root: true });
           $("#couponModal").modal("hide");
@@ -272,7 +269,6 @@ export default {
     delModal(item) {
       this.tempCoupon = item;
       $("#delcouponModal").modal("show");
-      console.log(this.tempCoupon.id);
     },
     deletCoupon() {
       const api = `${process.env.VUE_APP_API}/api/${
@@ -282,7 +278,6 @@ export default {
       vm.status.delLoading = true;
       this.$http.delete(api).then(response => {
         if (response.data.success) {
-          console.log(response.data);
           $("#delcouponModal").modal("hide");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'success' }, { root: true });
           vm.status.delLoading = false;

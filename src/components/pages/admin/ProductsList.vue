@@ -262,7 +262,6 @@ export default {
       const vm = this;
       this.$store.commit('LOADING', true, { root: true });
       this.$http.get(api).then(response => {
-        console.log(response.data);
         this.$store.commit('LOADING', false, { root: true });
         vm.products = response.data.products;
         vm.pagination = response.data.pagination;
@@ -302,7 +301,6 @@ export default {
       this.$store.commit('LOADING', true, { root: true });
       // 注意傳過去的資料是否正確
       this.$http[httpMethod](api, { data: vm.tempProduct }).then(response => {
-        console.log(response.data);
         if (response.data.success) {
           this.$store.commit('LOADING', false, { root: true });
           $("#productModal").modal("hide");
@@ -315,7 +313,6 @@ export default {
           this.$store.commit('LOADING', false, { root: true });
           $("#productModal").modal("hide");
           vm.getProducts(vm.pagination.current_page);
-          console.log("新增失敗");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'danger' }, { root: true });
           vm.tempProduct = {};
           vm.editTitle = "";
@@ -325,7 +322,6 @@ export default {
     delModal(item) {
       this.tempProduct = item;
       $("#delProductModal").modal("show");
-      console.log(this.tempProduct.id);
     },
     deletProduct() {
       const api = `${process.env.VUE_APP_API}/api/${
@@ -335,7 +331,6 @@ export default {
       vm.status.delLoading = true;
       this.$http.delete(api).then(response => {
         if (response.data.success) {
-          console.log(response.data);
           $("#delProductModal").modal("hide");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'success' }, { root: true });
           vm.status.delLoading = false;
@@ -349,7 +344,6 @@ export default {
     },
     uploadFile() {
       this.status.fileUpLoading = false;
-      console.log(this);
       // 取出檔案
       const uploadFiled = this.$refs.files.files[0];
       const vm = this;
@@ -369,7 +363,6 @@ export default {
           }
         })
         .then(response => {
-          console.log(response.data);
           if (response.data.success) {
             // vm.tempProduct.imageUrl = response.data.imageUrl;
             // vue 中，建立實體後才加入的屬性因為沒有被給予 getter 及 setter ，所以不會被響應系統察覺

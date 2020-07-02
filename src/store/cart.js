@@ -13,7 +13,6 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
       context.commit('LOADING', true, { root: true });
       axios.get(api).then(response => {
-        console.log("cart", response.data);
         context.commit('LOADING', false, { root: true });
         // vm.cart = response.data.data;
         context.commit('CART', response.data.data);
@@ -72,7 +71,6 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/coupon`;
       context.commit('LOADING', true, { root: true });
       axios.post(api, {data: coupon}).then(response => {
-        console.log(response.data);
         if (response.data.success) {
           context.commit('LOADING', false, { root: true });
           // this.$bus.$emit("message:push", response.data.message, "success");

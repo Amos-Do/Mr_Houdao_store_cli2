@@ -17,7 +17,6 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
       context.commit('LOADING', true, { root: true });
       axios.get(api).then(response => {
-        console.log(response.data);
         context.commit('LOADING', false, { root: true });
         context.commit('PRODUCTS', response.data.products);
       });
@@ -26,7 +25,6 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${id}`;
       context.commit('LOADING', true, { root: true });
       axios.get(api).then(response => {
-        console.log(response.data);
         // vm.product = response.data.product;
         context.commit('LOADING', false, { root: true });
         context.commit('PRODUCT', response.data.product);

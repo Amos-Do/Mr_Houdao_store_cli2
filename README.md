@@ -72,7 +72,7 @@ https://amos-do.github.io/Mr_Houdao_store_cli2/
 
 ### 詳細商品介紹
 
-點及增減想要購買數量，並且計算出金額
+點擊增減想要購買數量，並且計算出金額
 ![](https://i.imgur.com/SVMYl6F.png)
 
 ### 購物車

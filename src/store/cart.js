@@ -53,10 +53,12 @@ export default {
         product_id: originProductId,
         qty: newQty,
       };
+      context.commit('ADDANIMATED', true)
       axios.all([axios.delete(delApi), axios.post(addApi, { data: cart })])
         .then(axios.spread(() => {
           context.dispatch('getCart');
           context.commit('LOADING', false, { root: true });
+          context.commit('ADDANIMATED', false)
         }));
     },
     addCouponCode(context, coupon) {

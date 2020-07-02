@@ -75,7 +75,7 @@
           <tfoot>
             <tr class="d-md-none">
               <td colspan="5">
-                <div class="input-group input-group-sm mr-auto w-75">
+                <div class="input-group input-group-sm mr-auto w-100">
                   <input type="text" class="form-control" placeholder="請輸入 houdao 或 code 看看" v-model="couponCode">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button"

@@ -76,7 +76,7 @@
             <tr class="d-md-none">
               <td colspan="5">
                 <div class="input-group input-group-sm mr-auto w-75">
-                  <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="couponCode">
+                  <input type="text" class="form-control" placeholder="請輸入 houdao 或 code 看看" v-model="couponCode">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button"
                     @click="addCouponCode"
@@ -88,7 +88,7 @@
             <tr>
               <td colspan="4" class="d-md-table-cell d-none">
                 <div class="input-group input-group-sm mr-auto w-50">
-                  <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="couponCode">
+                  <input type="text" class="form-control" placeholder="請輸入 houdao 或 code 看看" v-model="couponCode">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button"
                     @click="addCouponCode"

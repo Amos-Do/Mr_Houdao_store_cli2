@@ -25,7 +25,7 @@ https://amos-do.github.io/Mr_Houdao_store_cli2/
 ## 主要練習
 
 * Vue.js
-* VueCli (2)
+* VueCLI (2)
 * Vuex 管理
 * VueRouter
 * VeeValidate 驗證
@@ -121,6 +121,10 @@ https://amos-do.github.io/Mr_Houdao_store_cli2/
 
 ### 優惠券管理
 ![](https://i.imgur.com/3sSgpe3.png)
+
+## 過濾功能
+* [金額符號與千分位](https://github.com/Amos-Do/Mr_Houdao_store_cli2/blob/master/src/filters/currency.js)
+* [日期格式轉換](https://github.com/Amos-Do/Mr_Houdao_store_cli2/blob/master/src/filters/turnTimestamp.js)
 
 ## 聲明
 * 圖片和資料來源皆來自於[厚道先生](https://www.facebook.com/mr.houdao)

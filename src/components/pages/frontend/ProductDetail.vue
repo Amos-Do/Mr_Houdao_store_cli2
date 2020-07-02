@@ -132,16 +132,6 @@ export default {
     getProduct() {
       const id = this.$route.params.id;
       this.$store.dispatch('productsModules/getProduct', id);
-      // const api = `${process.env.VUE_APP_API}/api/${
-      //   process.env.VUE_APP_CUSTOMPATH
-      // }/product/${id}`;
-      // const vm = this;
-      // vm.isLoading = true;
-      // this.$http.get(api).then(response => {
-      //   console.log(response.data);
-      //   vm.product = response.data.product;
-      //   vm.isLoading = false;
-      // });
     },
     decreaseQty() {
       if (this.qty === 1) {
@@ -152,22 +142,6 @@ export default {
     },
     addtoCart (id, qty = 1) {
       this.$store.dispatch('cartModules/addtoCart', { id, qty })
-      // const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
-      // const cart = {
-      //   product_id: id,
-      //   qty,
-      // }
-      // const vm = this;
-      // vm.addtoCartLoading = id;
-      // this.$http.post(api, {data: cart}).then(response => {
-      //   if (response.data.success) {
-      //     vm.addtoCartLoading = '';
-      //     this.$bus.$emit('message:push', response.data.message, 'success');
-      //   } else {
-      //     vm.addtoCartLoading = '';
-      //     this.$bus.$emit('message:push', '加入購物車失敗，請稍後再試', 'danger');
-      //   }
-      // })
     }
   }
 };

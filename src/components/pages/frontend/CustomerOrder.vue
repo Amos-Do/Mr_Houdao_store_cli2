@@ -193,38 +193,13 @@ export default {
   },
   methods: {
     ...mapActions('cartModules', ['getCart']),
-    // getCart() {
-    //   const api = `${process.env.VUE_APP_API}/api/${
-    //     process.env.VUE_APP_CUSTOMPATH
-    //   }/cart`;
-    //   const vm = this;
-    //   vm.isLoading = true;
-    //   this.$http.get(api).then(response => {
-    //     console.log("cart", response.data);
-    //     vm.isLoading = false;
-    //     vm.cart = response.data.data;
-    //   });
-    // },
     creatOrder() {
-      // const api = `${process.env.VUE_APP_API}/api/${
-      //   process.env.VUE_APP_CUSTOMPATH
-      // }/order`;
       const vm = this;
       const order = vm.form;
       this.$refs.form.validate().then(success => {
         if (success) {
           vm.$store.dispatch('orderModules/creatOrder', order);
           this.isLeave = true;
-          // vm.isLoading = true;
-          // this.$http.post(api, { data: vm.form }).then(response => {
-          //   console.log(response.data);
-          //   if (response.data.success) {
-          //     vm.isLoading = false;
-          //     // 成功後跳到指定 付款頁面，並帶上 orderId
-          //     vm.$router.push(`/payment/${response.data.orderId}`);
-          //     // vm.getCart()
-          //   }
-          // });
         } else {
           vm.$store.dispatch('alertModules/updateMessage', { message: '欄位填寫不完整', status: 'danger' }, { root: true });
         }

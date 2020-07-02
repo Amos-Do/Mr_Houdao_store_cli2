@@ -152,46 +152,11 @@ export default {
   },
   methods: {
     ...mapActions('cartModules', ['getCart']),
-    // getCart() {
-    //   const api = `${process.env.VUE_APP_API}/api/${
-    //     process.env.VUE_APP_CUSTOMPATH
-    //   }/cart`;
-    //   const vm = this;
-    //   vm.isLoading = true;
-    //   this.$http.get(api).then(response => {
-    //     console.log("cart", response.data);
-    //     vm.isLoading = false;
-    //     vm.cart = response.data.data;
-    //   });
-    // },
     addtoCart (id, qty = 1) {
       this.$store.dispatch('cartModules/addtoCart', {id, qty});
-      // const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
-      // const cart = {
-      //   product_id: id,
-      //   qty,
-      // }
-      // const vm = this;
-      // this.$http.post(api, {data: cart}).then(response => {
-      //   if (response.data.success) {
-      //     vm.getCart();
-      //   }
-      // })
     },
     removeCartItem(id) {
       this.$store.dispatch('cartModules/removeCartItem', id);
-      // const api = `${process.env.VUE_APP_API}/api/${
-      //   process.env.VUE_APP_CUSTOMPATH
-      // }/cart/${id}`;
-      // const vm = this;
-      // vm.isLoading = true;
-      // this.$http.delete(api).then(response => {
-      //   if (response.data.success) {
-      //     vm.isLoading = false;
-      //     // this.$bus.$emit("message:push", "刪除商品成功", "success");
-      //     vm.getCart();
-      //   }
-      // });
     },
     changeQty(originCartId, originProductId, qty, qtyStatus) {
       let newQty;
@@ -204,41 +169,16 @@ export default {
       }
       console.log(newQty);
       this.$store.dispatch('cartModules/changeQty', {originCartId, originProductId, newQty});
-      // this.removeCartItem(id);
-      // // this.$store.dispatch('cartModules/addtoCart', {productId, num});
-      // this.addtoCart(productId, num);
     },
     addCouponCode() {
-      // const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/coupon`;
-      // const vm = this;
       const coupon = {
         code: this.couponCode,
       }
       this.$store.dispatch('cartModules/addCouponCode', coupon);
-      // vm.isLoading = true;
-      // this.$http.post(api, {data: coupon}).then(response => {
-      //   console.log(response.data);
-      //   if (response.data.success) {
-      //     vm.isLoading = false;
-      //     this.$bus.$emit("message:push", response.data.message, "success");
-      //     vm.getCart();
-      //   } else {
-      //     vm.isLoading = false;
-      //     this.$bus.$emit("message:push", response.data.message, "danger");
-      //     vm.getCart();
-      //   }
-      // });
     }
   },
 };
 </script>
 
 <style lang="scss">
-// .cart-image {
-//   background-image:url('@/assets/images/product1-1.jpg');
-//   width: 65px;
-//   height: 70px;
-//   background-size: cover;
-//   background-position: 50%;
-// }
 </style>

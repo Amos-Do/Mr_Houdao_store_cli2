@@ -110,9 +110,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import "@/assets/dashboard.scss";
-
-// .bg-login-img {
-//     background-color: #edc645;
-// }
 </style>

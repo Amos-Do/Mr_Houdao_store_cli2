@@ -90,15 +90,6 @@ export default {
     getOrder() {
       this.$store.dispatch('orderModules/getOrder', this.orderId);
       this.$store.commit('cartModules/ADDANIMATED', true);
-      // this.$store.dispatch('orderModules/getAnimated');
-      // const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/order/${this.orderId}`;
-      // const vm = this;
-      // vm.isLoading = true;
-      // this.$http.get(api).then(response => {
-      //   vm.isLoading = false;
-      //   console.log(response.data);
-      //   vm.order = response.data.order
-      // })
     },
     
   }

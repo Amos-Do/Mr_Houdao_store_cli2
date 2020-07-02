@@ -186,49 +186,9 @@ export default {
         return index <= allLen - 1 && index >= allLen - 3;
       });
     }
-    // products() {
-    //   return this.$store.state.products;
-    // },
-    // newProducts() {
-    //   return this.$store.state.newProducts;
-    // }
   },
   methods: {
     ...mapActions('productsModules',['getProducts']),
-    // getProducts() {
-    //   this.$store.dispatch('getProducts');
-    //   // this.$store.commit('NEWPRODUCTS');
-    //   // const api = `${process.env.VUE_APP_API}/api/${
-    //   //   process.env.VUE_APP_CUSTOMPATH
-    //   // }/products/all`;
-    //   // const vm = this;
-    //   // // vm.$store.state.isLoading = true;
-    //   // // dipatch 呼叫 actions 的 function 並傳入 payload
-    //   // vm.$store.dispatch("updateLoading", true);
-    //   // // vm.$store.commit('LOADING', true);
-    //   // this.$http.get(api).then(response => {
-    //   //   console.log(response.data);
-    //   //   // vm.$store.state.isLoading = false;
-    //   //   vm.$store.dispatch("updateLoading", false);
-    //   //   // vm.$store.commit('LOADING', false);
-    //   //   response.data.products.forEach(item => {
-    //   //     if (item.is_enabled === 1) {
-    //   //       vm.products.push(item);
-    //   //     }
-    //   //   });
-    //   //   vm.getNewProducts();
-    //   // });
-    // },
-    // getNewProducts() {
-    //   const vm = this;
-    //   const allNewProducts = vm.products.filter(item => {
-    //     return item.category === "最新商品";
-    //   });
-    //   let allLen = allNewProducts.length;
-    //   vm.newProducts = allNewProducts.filter((item, index) => {
-    //     return index <= allLen - 1 && index >= allLen - 3;
-    //   });
-    // },
     addtoCart(id, qty = 1) {
       const target = this.cart.carts.filter((item) => item.product_id === id);
       console.log(target);
@@ -242,28 +202,6 @@ export default {
       } else {
         this.$store.dispatch('cartModules/addtoCart', {id, qty})
       }
-      // const api = `${process.env.VUE_APP_API}/api/${
-      //   process.env.VUE_APP_CUSTOMPATH
-      // }/cart`;
-      // const cart = {
-      //   product_id: id,
-      //   qty
-      // };
-      // const vm = this;
-      // vm.addtoCartLoading = id;
-      // this.$http.post(api, { data: cart }).then(response => {
-      //   if (response.data.success) {
-      //     vm.addtoCartLoading = "";
-      //     this.$bus.$emit("message:push", response.data.message, "success");
-      //   } else {
-      //     vm.addtoCartLoading = "";
-      //     this.$bus.$emit(
-      //       "message:push",
-      //       "加入購物車失敗，請稍後再試",
-      //       "danger"
-      //     );
-      //   }
-      // });
     }
   },
   mounted() {

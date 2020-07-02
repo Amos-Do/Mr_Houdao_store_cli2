@@ -107,53 +107,11 @@ export default {
       "categoryProducts"
     ]),
     ...mapGetters("cartModules", ["cart"])
-    // categoryProducts () {
-    //   const vm = this;
-    //   const sortProducts = [];
-    //   if (vm.category === '最新商品') {
-    //     vm.products.forEach(item => {
-    //       if (item.category === vm.category) {
-    //         sortProducts.push(item);
-    //       }
-    //     });
-    //     return sortProducts;
-    //   } else if (vm.category === '誠心推薦') {
-    //     vm.products.forEach(item => {
-    //       if (item.category === vm.category) {
-    //         sortProducts.push(item);
-    //       }
-    //     });
-    //     return sortProducts;
-    //   } else {
-    //     return vm.products;
-    //   }
-    // }
   },
   methods: {
     ...mapActions("productsModules", ["getProducts"]),
-    // getProducts () {
-    //   const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
-    //   const vm = this;
-    //   vm.isLoading = true;
-    //   this.$http.get(api).then(response => {
-    //     console.log(response.data);
-    //     vm.isLoading = false;
-    //     response.data.products.forEach(item => {
-    //       if (item.is_enabled === 1) {
-    //         vm.products.push(item);
-    //       }
-    //     })
-    //   });
-    // },
     selectCategory(name) {
       this.$store.commit("productsModules/SELECTCATEGORY", name);
-      // if (name === '最新商品') {
-      //   this.category = name;
-      // } else if (name === '誠心推薦') {
-      //   this.category = name;
-      // } else {
-      //   this.category = name;
-      // }
     },
     addtoCart(id, qty = 1) {
       const target = this.cart.carts.filter(item => item.product_id === id);
@@ -169,22 +127,6 @@ export default {
         this.$store.dispatch("cartModules/addtoCart", { id, qty });
       }
 
-      // const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
-      // const cart = {
-      //   product_id: id,
-      //   qty,
-      // }
-      // const vm = this;
-      // vm.addtoCartLoading = id;
-      // this.$http.post(api, {data: cart}).then(response => {
-      //   if (response.data.success) {
-      //     vm.addtoCartLoading = '';
-      //     this.$bus.$emit('message:push', response.data.message, 'success');
-      //   } else {
-      //     vm.addtoCartLoading = '';
-      //     this.$bus.$emit('message:push', '加入購物車失敗，請稍後再試', 'danger');
-      //   }
-      // })
     }
   }
 };

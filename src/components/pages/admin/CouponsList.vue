@@ -256,7 +256,6 @@ export default {
         if (response.data.success) {
           this.$store.commit('LOADING', false, { root: true });
           $("#couponModal").modal("hide");
-          // this.$bus.$emit("message:push", response.data.message, "success");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'success' }, { root: true });
           vm.getCoupons(vm.pagination.current_page);
           vm.tempCoupon = {};
@@ -264,7 +263,6 @@ export default {
         } else {
           this.$store.commit('LOADING', false, { root: true });
           $("#couponModal").modal("hide");
-          // this.$bus.$emit("message:push", response.data.message, "danger");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'danger' }, { root: true });
           vm.tempCoupon = {};
           vm.editTitle = "";
@@ -286,7 +284,6 @@ export default {
         if (response.data.success) {
           console.log(response.data);
           $("#delcouponModal").modal("hide");
-          // this.$bus.$emit("message:push", response.data.message, "success");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'success' }, { root: true });
           vm.status.delLoading = false;
           vm.getCoupons(vm.pagination.current_page);

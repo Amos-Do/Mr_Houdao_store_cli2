@@ -260,11 +260,9 @@ export default {
         process.env.VUE_APP_CUSTOMPATH
       }/products?page=${page}`;
       const vm = this;
-      // vm.isLoading = true;
       this.$store.commit('LOADING', true, { root: true });
       this.$http.get(api).then(response => {
         console.log(response.data);
-        // vm.isLoading = false;
         this.$store.commit('LOADING', false, { root: true });
         vm.products = response.data.products;
         vm.pagination = response.data.pagination;
@@ -308,7 +306,6 @@ export default {
         if (response.data.success) {
           this.$store.commit('LOADING', false, { root: true });
           $("#productModal").modal("hide");
-          // this.$bus.$emit("message:push", response.data.message, "success");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'success' }, { root: true });
           // 新增或更新產品，回到原本頁數
           vm.getProducts(vm.pagination.current_page);
@@ -319,8 +316,6 @@ export default {
           $("#productModal").modal("hide");
           vm.getProducts(vm.pagination.current_page);
           console.log("新增失敗");
-          // 內層使用 $emit 來觸發外層的 alert
-          // this.$bus.$emit("message:push", response.data.message, "danger");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'danger' }, { root: true });
           vm.tempProduct = {};
           vm.editTitle = "";
@@ -342,12 +337,10 @@ export default {
         if (response.data.success) {
           console.log(response.data);
           $("#delProductModal").modal("hide");
-          // this.$bus.$emit("message:push", response.data.message, "success");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'success' }, { root: true });
           vm.status.delLoading = false;
           vm.getProducts(vm.pagination.current_page);
         } else {
-          // this.$bus.$emit("message:push", response.data.message, "danger");
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'danger' }, { root: true });
           vm.status.delLoading = false;
           vm.getProducts(vm.pagination.current_page);
@@ -386,8 +379,6 @@ export default {
             vm.status.fileUpLoading = false;
           } else {
             vm.status.fileUpLoading = false;
-            // 內層使用 $emit 來觸發外層的 alert
-            // this.$bus.$emit("message:push", response.data.message, "danger");
             vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'danger' }, { root: true });
             $("#customFile").val("");
           }

@@ -122,29 +122,10 @@ export default {
   methods: {
     getOrder() {
       this.$store.dispatch('orderModules/getOrder', this.orderId);
-      // const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/order/${this.orderId}`;
-      // const vm = this;
-      // vm.isLoading = true;
-      // this.$http.get(api).then(response => {
-      //   console.log(response.data);
-      //   vm.isLoading = false;
-      //   vm.order = response.data.order
-        
-      // })
     },
     payOrder() {
       this.$store.dispatch('orderModules/payOrder', this.orderId);
       this.isLeave = true;
-      // const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${this.orderId}`;
-      // const vm = this;
-      // vm.isLoading = true;
-      // this.$http.post(api).then(response => {
-      //   console.log(response.data);
-      //   if(response.data.success) {
-      //     vm.isLoading = false;
-      //     vm.$router.push(`/pay_complate/${vm.orderId}`);
-      //   }
-      // })
     }
   },
   beforeRouteLeave (to, from, next) {

@@ -35,9 +35,6 @@ export default {
   },
   computed: {
     ...mapGetters(['isLoading'])
-    // isLoading() {
-    //   return this.$store.state.isLoading;
-    // }
   },
 }
 </script>

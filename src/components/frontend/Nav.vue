@@ -148,37 +148,11 @@ export default {
   computed: {
     ...mapGetters('cartModules',['cart','addAnimated']),
     ...mapGetters(['status']),
-    // cart () {
-    //   return this.$store.state.cart;
-    // }
   },
   methods: {
     ...mapActions('cartModules',['getCart']),
-    // getCart() {
-    //   this.$store.dispatch('getCart');
-    //   // const api = `${process.env.VUE_APP_API}/api/${
-    //   //   process.env.VUE_APP_CUSTOMPATH
-    //   // }/cart`;
-    //   // const vm = this;
-    //   // this.$http.get(api).then(response => {
-    //   //   console.log("cart", response.data);
-    //   //   vm.cart = response.data.data;
-    //   // });
-    // },
     removeCartItem(id) {
       this.$store.dispatch('cartModules/removeCartItem', id);
-      // const api = `${process.env.VUE_APP_API}/api/${
-      //   process.env.VUE_APP_CUSTOMPATH
-      // }/cart/${id}`;
-      // const vm = this;
-      // vm.isLoading = true;
-      // this.$http.delete(api).then(response => {
-      //   if (response.data.success) {
-      //     vm.isLoading = false;
-      //     this.$bus.$emit("message:push", "刪除商品成功", "success");
-      //     vm.getCart();
-      //   }
-      // });
     }
   },
   mounted() {

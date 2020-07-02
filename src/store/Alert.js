@@ -4,7 +4,6 @@ export default {
   state: {
     messages: []
   },
-  // 操作行為
   actions: {
     updateMessage(context, { message, status }) {
       const timestamp = Math.floor(new Date() / 1000);
@@ -17,7 +16,6 @@ export default {
       }, 3000);
     }
   },
-  // 實際操作資料狀態
   mutations: {
     UPDATEMESSAGE(state, payload) {
       state.messages.push(payload);

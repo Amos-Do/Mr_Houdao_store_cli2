@@ -11,7 +11,6 @@ export default {
     product: [],
     category: 'all',
   },
-  // 操作行為
   actions: {
     getProducts (context) {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
@@ -25,13 +24,11 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${id}`;
       context.commit('LOADING', true, { root: true });
       axios.get(api).then(response => {
-        // vm.product = response.data.product;
         context.commit('LOADING', false, { root: true });
         context.commit('PRODUCT', response.data.product);
       });
     }
   },
-  // 實際操作資料狀態
   mutations: {
     PRODUCTS(state, payload) {
       state.products = payload.filter(item => {

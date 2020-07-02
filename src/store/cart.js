@@ -7,14 +7,12 @@ export default {
     cart: {},
     addAnimated: false,
   },
-  // 操作行為
   actions: {
     getCart(context) {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
       context.commit('LOADING', true, { root: true });
       axios.get(api).then(response => {
         context.commit('LOADING', false, { root: true });
-        // vm.cart = response.data.data;
         context.commit('CART', response.data.data);
       });
     },
@@ -41,14 +39,8 @@ export default {
           context.dispatch('getCart');
           context.commit('LOADING', false, { root: true });
           context.commit('ADDANIMATED', false)
-          // this.$bus.$emit("message:push", response.data.message, "success");
           context.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'success' }, { root: true });
         } else {
-          // this.$bus.$emit(
-          //   "message:push",
-          //   "加入購物車失敗，請稍後再試",
-          //   "danger"
-          // );
           context.dispatch('alertModules/updateMessage', { message: '加入購物車失敗，請稍後再試', status: 'danger' }, { root: true });
         }
       });
@@ -73,7 +65,6 @@ export default {
       axios.post(api, {data: coupon}).then(response => {
         if (response.data.success) {
           context.commit('LOADING', false, { root: true });
-          // this.$bus.$emit("message:push", response.data.message, "success");
           context.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'success' }, { root: true });
           context.dispatch('getCart');
         } else {
@@ -84,7 +75,6 @@ export default {
       });
     }
   },
-  // 實際操作資料狀態
   mutations: {
     CART(state, payload) {
       state.cart = payload;

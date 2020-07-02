@@ -1,21 +1,127 @@
-# mr_houdao_cli2
+# Mr. Houdao 厚道先生果醬電商
 
-> A Vue.js project
+![](https://i.imgur.com/B9UZguP.jpg)
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+## Demo
+https://amos-do.github.io/Mr_Houdao_store_cli2/
 
-# serve with hot reload at localhost:8080
-npm run dev
+## 簡介
+> 與厚道先生合作，取得厚道先生之品牌授權
 
-# build for production with minification
-npm run build
+此作品的功能有:
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+* 前台
+    * 首頁：介紹與導覽
+    * 購物商場：多項商品分類以及單一商品細節、商品列表、加入購物車
+    * 購物車：使用優惠券、調整商品（數量增減、刪除）、查看購物車商品項目，無產品時引導至購物商場
+    * 下單購買 / 訂單結帳
+    * 後台登入（登入頁） / 進入後台
+* 後台
+    * 商品管理：商品的管理（新增/刪除/修改產品）
+    * 訂單管理：查看訂單狀況
+    * 優惠券管理：優惠券的管理（新增/刪除/修改優惠券）
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 主要練習
+
+* Vue.js
+* VueCli (2)
+* Vuex 管理
+* VueRouter
+* VeeValidate 驗證
+* 元件概念
+* Webpack
+* Ajax串接API、ES6
+* Bootstrap 4 + 搭配手刻前台SCSS（後台使用 [SB Admin 2](https://github.com/StartBootstrap/startbootstrap-sb-admin-2)）
+* RWD（支援 iphone 5）
+
+## 使用的 Plugin
+
+* [Vue-router](https://router.vuejs.org/zh/)
+* [Vue-axios](https://github.com/imcvampire/vue-axios#readme)
+* [Vue-loading-overlay](https://github.com/ankurk91/vue-loading-overlay)
+* [VeeValidate ](https://logaretm.github.io/vee-validate/)
+* [Font Awesome 5](https://fontawesome.com/)
+* [Bootstrap 4](https://getbootstrap.com/)
+* [Animate.css](https://animate.style/)
+
+## 前台介紹
+### loading 動畫
+厚道先生圖像動畫，凸顯品牌特色
+
+![](https://i.imgur.com/lNpHa0n.png)
+
+### 首頁
+使用 Carousel 輪播 banner 展現厚道先生健康清晰特色
+![](https://i.imgur.com/buIiUAH.jpg)
+
+品牌與產品特色
+![](https://i.imgur.com/SmupbBt.png)
+
+透過不同色塊呈現厚道先生介紹產品與來源，與顧客拉近距離
+![](https://i.imgur.com/gYHqlIw.png)
+
+呈現最新上架的商品
+![](https://i.imgur.com/vG3k21e.png)
+
+### 購物商場
+
+* 可透過**分類連結**選取特定分類
+* 滑鼠滑入商品照片時，可進入詳細商品介紹
+![](https://i.imgur.com/03oh6WP.jpg)
+
+### 詳細商品介紹
+
+點及增減想要購買數量，並且計算出金額
+![](https://i.imgur.com/SVMYl6F.png)
+
+### 購物車
+
+* 小型簡易購物車（每按下加入購物車按鈕後，會彈跳購物車，表示已加入）
+![](https://i.imgur.com/S9JEYHy.png)
+
+* 購物車頁面
+    1. 可以增減數量，並且會同步金額
+    2. 直接按刪除按鈕，會直接刪除該商品
+    3. 優惠券輸入：houdao 或 code (已過期)
+    4. 套用優惠券後，會顯示折購金額
+
+    ![](https://i.imgur.com/3Y6jhGf.png)
+
+* 如果購物車為空，會引導至購物商場購物
+![](https://i.imgur.com/cMTpuL8.jpg)
+
+### 建立訂單頁面
+
+![](https://i.imgur.com/z6IgMhB.png)
+
+如果回到上一頁，導航守衛會做出判斷，減少訂單尚未完成而退出
+![](https://i.imgur.com/EbQgPs1.png)
+
+### 付款頁面
+
+![](https://i.imgur.com/VYbJi5f.png)
+
+
+### 結帳完成
+
+![](https://i.imgur.com/01WicWQ.png)
+
+
+## 後台介紹
+
+### 登入
+![](https://i.imgur.com/NAWisgw.jpg)
+
+### 商品管理
+![](https://i.imgur.com/GYjrYjd.png)
+
+### 訂單管理
+![](https://i.imgur.com/DNlENMu.png)
+
+### 優惠券管理
+![](https://i.imgur.com/3sSgpe3.png)
+
+## 聲明
+* 圖片和資料來源皆來自於[厚道先生](https://www.facebook.com/mr.houdao)
+* 本作品內的圖片與內容，純粹為個人練習技術使用，不做任何商業用途。

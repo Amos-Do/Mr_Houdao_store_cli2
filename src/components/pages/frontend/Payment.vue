@@ -121,6 +121,7 @@ export default {
   methods: {
     getOrder() {
       this.$store.dispatch('orderModules/getOrder', this.orderId);
+      this.$store.dispatch('cartModules/getCart');
     },
     payOrder() {
       this.$store.dispatch('orderModules/payOrder', this.orderId);
